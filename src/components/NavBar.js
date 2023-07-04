@@ -1,9 +1,20 @@
 import React from "react";
+import { createPortal } from "react-dom";
 
 function NavBar() {
   const links = ["home", "about", "projects"];
 
-  return <nav>{/* display an <a> tag for each link here */}</nav>;
+  const linkElements = links.map((l) => {
+    return <a href={`#`+l} key={l}>{l}</a>;
+  });
+
+  return (
+    <nav>
+    { 
+      linkElements
+    }
+    </nav>
+  );
 }
 
 export default NavBar;
